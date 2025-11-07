@@ -48,34 +48,29 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4">
+      <header className="border-b border-border">
+        <div className="container mx-auto px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <FileText className="w-6 h-6 text-primary-foreground" />
+            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center border-2 border-primary">
+              <FileText className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Smart Certificate OCR</h1>
-              <p className="text-xs text-muted-foreground">Extract text from certificates instantly</p>
+              <h1 className="text-2xl font-bold text-foreground">SmartCert</h1>
+              <p className="text-sm text-muted-foreground">AI-Powered Certificate Authentication</p>
             </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
+      <main className="container mx-auto px-4 py-16 max-w-5xl">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <Sparkles className="w-4 h-4" />
-            Powered by Advanced OCR
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Extract Text from Certificates
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Verify Your Certificates
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Upload your certificate image and get accurate text extraction in seconds. 
-            Perfect for digitizing documents, certificates, and official papers.
+          <p className="text-lg text-muted-foreground">
+            Upload any certificate and let our AI-powered system verify its authenticity in seconds
           </p>
         </div>
 
@@ -88,14 +83,14 @@ const Index = () => {
           />
 
           {selectedFile && !isProcessing && !extractedText && (
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-6">
               <Button
                 onClick={handleExtract}
                 size="lg"
-                className="gap-2 shadow-elegant hover:shadow-xl transition-all duration-300"
+                className="gap-2 px-8 py-6 text-base"
               >
-                <Sparkles className="w-5 h-5" />
-                Extract Text
+                <FileText className="w-5 h-5" />
+                Verify Certificate
               </Button>
             </div>
           )}
@@ -115,38 +110,6 @@ const Index = () => {
           </div>
         )}
 
-        {/* Features */}
-        {!selectedFile && (
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
-            <div className="bg-card rounded-lg p-6 shadow-card border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">Fast Processing</h3>
-              <p className="text-sm text-muted-foreground">
-                Get your text extracted in seconds with our optimized OCR engine
-              </p>
-            </div>
-            <div className="bg-card rounded-lg p-6 shadow-card border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Sparkles className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">High Accuracy</h3>
-              <p className="text-sm text-muted-foreground">
-                Advanced OCR technology ensures accurate text recognition
-              </p>
-            </div>
-            <div className="bg-card rounded-lg p-6 shadow-card border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <FileText className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">Easy Export</h3>
-              <p className="text-sm text-muted-foreground">
-                Copy extracted text with one click for easy use
-              </p>
-            </div>
-          </div>
-        )}
       </main>
     </div>
   );
