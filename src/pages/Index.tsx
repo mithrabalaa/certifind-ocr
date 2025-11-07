@@ -6,6 +6,7 @@ import { ProcessingState } from "@/components/ProcessingState";
 import { Button } from "@/components/ui/button";
 import { extractTextFromImage } from "@/lib/ocr";
 import { toast } from "sonner";
+import appIcon from "@/assets/app-icon.png";
 
 const Index = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -51,9 +52,11 @@ const Index = () => {
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <FileText className="w-6 h-6 text-primary-foreground" />
-            </div>
+            <img 
+              src={appIcon} 
+              alt="Smart Certificate OCR" 
+              className="w-12 h-12 rounded-xl shadow-elegant"
+            />
             <div>
               <h1 className="text-xl font-bold text-foreground">Smart Certificate OCR</h1>
               <p className="text-xs text-muted-foreground">Extract text from certificates instantly</p>
